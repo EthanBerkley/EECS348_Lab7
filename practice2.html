@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title>Ethan B - EECS 348 Lab Seven</title>
+  <style>
+    body {
+      background-color: rgb(38, 38, 38);
+      color: white;
+    }
+    #graph {
+      border-style: solid;
+      border-width: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Create a web page that has a paragraph with some dummy text. Near the paragraph, have a
+text field to accept the following values: red/green/blue values for the paragraph and
+red/green/blue values for the border. You also need to control the width of the border. -->
+
+  <p id="graph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem fugit, suscipit velit pariatur sed modi
+    tempore iure? Eius delectus deleniti doloribus dolor perferendis error sunt, fuga architecto, eaque enim minima!</p>
+
+  <div>
+    <p>Border color:</p> 
+    <input type="text" name="br" id="br">
+    <input type="text" name="bb" id="bg">
+    <input type="text" name="bb" id="bb">
+  </div>
+  <div>
+    <p>Background color:</p> 
+    <input type="text" name="bgr" id="bgr">
+    <input type="text" name="bgb" id="bgg">
+    <input type="text" name="bgb" id="bgb">
+  </div>
+  <div>
+    <p>Border Width: </p>
+    <input type="number" name="bw" id="bw">
+  </div>
+  <div>
+    <button onclick=change()>Change!</button>
+  </div>
+  <script>
+    let br = document.body.querySelector("#br");
+    let bg = document.body.querySelector("#bg");
+    let bb = document.body.querySelector("#bb");
+
+    let bgr = document.body.querySelector("#bgr");
+    let bgg = document.body.querySelector("#bgg");
+    let bgb = document.body.querySelector("#bgb");
+
+    let bw = document.body.querySelector("#bw");
+
+    let p = document.body.querySelector("#graph")
+
+    function change(){
+      p.style.borderColor = `rgb(${br.value},${bg.value},${bb.value})`;
+      p.style.backgroundColor = `rgb(${bgr.value},${bgg.value},${bgb.value})`;
+      p.style.borderWidth = bw.value;
+    }
+
+
+  </script>
+</body>
+
+</html>

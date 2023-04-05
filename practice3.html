@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <title>Ethan B - EECS 348 Lab Seven</title>
+  <style>
+      body {
+    background-color: rgb(38, 38, 38);
+    color: white;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- Create a JavaScript program that allows the user to enter a password two times to verify them.
+If the password is not at least eight characters long or if two passwords are different, alert the
+user. Otherwise, tell the user that two passwords are matched. -->
+  <div>
+    <p>password 1</p>
+    <input type="text" id="in1">
+  </div>
+
+  <div>
+    <p>password 2</p>
+    <input type="text" id="in2">
+  </div>
+
+  <div>
+    <br>
+    <button onclick=output()>Test passwords</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    let p1 = document.body.querySelector("#in1")
+    let p2 = document.body.querySelector("#in2")
+    let out = document.body.querySelector("#output")
+    function areEqual() {
+      if (p1.value.length < 8) return false;
+      return p1.value == p2.value
+    }
+
+    function output() {
+      if (areEqual()) {
+        out.innerHTML = "VALID";
+      } else {
+        out.innerHTML = "NOT VALID";
+      }
+    }
+
+    // p1.addEventListener("change", output)
+    // p2.addEventListener("change", output)
+
+
+
+  </script>
+</body>
+
+</html>
